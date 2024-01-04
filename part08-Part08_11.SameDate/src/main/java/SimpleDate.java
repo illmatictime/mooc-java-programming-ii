@@ -12,6 +12,20 @@ public class SimpleDate {
     }
 
     @Override
+    public boolean equals(Object object){
+        if(object == null || this.getClass() != object.getClass()){
+            return false;
+        }
+
+        if(object == this){
+            return true;
+        }
+
+        SimpleDate compared = (SimpleDate) object;
+        return this.equals(compared);
+    }
+
+    @Override
     public String toString() {
         return this.day + "." + this.month + "." + this.year;
     }
