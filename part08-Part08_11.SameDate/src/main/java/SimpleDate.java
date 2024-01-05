@@ -13,16 +13,39 @@ public class SimpleDate {
 
     @Override
     public boolean equals(Object object){
-        if(object == null || this.getClass() != object.getClass()){
-            return false;
-        }
-
-        if(object == this){
+        if(this == object){
             return true;
         }
 
-        SimpleDate compared = (SimpleDate) object;
-        return this.equals(compared);
+        if(!(object instanceof SimpleDate)){
+            return false;
+        }
+
+        SimpleDate comparedObject = (SimpleDate) object;
+
+        if(this.day == comparedObject.day && this.month == comparedObject.month && this.year == comparedObject.year){
+            return true;
+        }
+
+        return false;
+        // Other possible solution
+        // if (obj == null) {
+        //     return false;
+        // }
+        // if (getClass() != obj.getClass()) {
+        //     return false;
+        // }
+        // final SimpleDate other = (SimpleDate) obj;
+        // if (this.day != other.day) {
+        //     return false;
+        // }
+        // if (this.month != other.month) {
+        //     return false;
+        // }
+        // if (this.year != other.year) {
+        //     return false;
+        // }
+        // return true;
     }
 
     @Override
