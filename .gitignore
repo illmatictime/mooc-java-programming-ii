@@ -56,3 +56,11 @@ part08-Part08_10.IOweYou/target/maven-status/maven-compiler-plugin/compile/defau
 part08-Part08_10.IOweYou/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
 part08-Part08_10.IOweYou/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
 part08-Part08_10.IOweYou/target/test-classes/IOUTest.class
+part08-Part08_09.PrintMeAnotherHashmap/target/classes/Book.class
+part08-Part08_09.PrintMeAnotherHashmap/target/test-classes/PrintMeAnotherHashmapTest.class
+part08-Part08_10.IOweYou/target/test-classes/IOUTest.class
+part08-Part08_11.SameDate/target/classes/Main.class
+part08-Part08_11.SameDate/target/test-classes/SimpleDateTest.class
+part08-Part08_12.HashedDate/target/classes/SimpleDate.class
+part08-Part08_13.VehicleRegistry/target/classes/LicensePlate.class
+part08-Part08_13.VehicleRegistry/target/classes/Main.class
