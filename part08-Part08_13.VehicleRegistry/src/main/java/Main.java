@@ -2,12 +2,11 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
 public class Main {
 
     public static void main(String[] args) {
         // the following is the same sample program shown in ex 8.13 description
-        
+
         LicensePlate li1 = new LicensePlate("FI", "ABC-123");
         LicensePlate li2 = new LicensePlate("FI", "UXE-465");
         LicensePlate li3 = new LicensePlate("D", "B WQ-431");
@@ -21,8 +20,9 @@ public class Main {
             finnishPlates.add(newLi);
         }
         System.out.println("Finnish: " + finnishPlates);
-        // if the equals-method hasn't been overwritten, the same license number will be added to the list againg
-        
+        // if the equals-method hasn't been overwritten, the same license number will be
+        // added to the list againg
+
         HashMap<LicensePlate, String> owners = new HashMap<>();
         owners.put(li1, "Arto");
         owners.put(li3, "Jürgen");
@@ -34,5 +34,10 @@ public class Main {
 
         VehicleRegistry vr = new VehicleRegistry();
         vr.add(new LicensePlate("FI", "AAA-111"), "Arto");
+        vr.add(new LicensePlate("FI", "BBB-222"), "Pekka");
+        vr.add(new LicensePlate("FI", "CCC-333"), "Jukka");
+        vr.printLicensePlates();
+        System.out.println("owners");
+        vr.printOwners();
     }
 }
