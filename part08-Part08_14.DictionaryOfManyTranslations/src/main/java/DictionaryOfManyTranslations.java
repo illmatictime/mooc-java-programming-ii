@@ -10,6 +10,8 @@ public class DictionaryOfManyTranslations {
     }
 
     public void add(String word, String translation) {
+        // this.dictionary.putIfAbsent(word, new ArrayList<>());
+        // this.dictionary.get(word).add(translation);
         this.dictionary.putIfAbsent(word, new ArrayList<>());
 
         ArrayList<String> translations = this.dictionary.get(word);
@@ -18,11 +20,14 @@ public class DictionaryOfManyTranslations {
     }
 
     public ArrayList<String> translate(String word) {
-        return null;
-
+        // return dictionary.getOrDefault(word, new ArrayList<>());
+        if (!dictionary.containsKey(word)) {
+            return new ArrayList<>();
+        }
+        return dictionary.get(word);
     }
 
     public void remove(String word) {
-
+        dictionary.remove(word);
     }
 }
