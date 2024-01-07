@@ -70,3 +70,8 @@ part08-Part08_13.VehicleRegistry/target/maven-status/maven-compiler-plugin/compi
 part08-Part08_13.VehicleRegistry/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
 part08-Part08_13.VehicleRegistry/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst
 part08-Part08_13.VehicleRegistry/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst
+part08-Part08_13.VehicleRegistry/target/classes/LicensePlate.class
+part08-Part08_13.VehicleRegistry/target/classes/Main.class
+part08-Part08_13.VehicleRegistry/target/test-classes/VehicleRegistryHiddenTest.class
+part08-Part08_13.VehicleRegistry/target/test-classes/VehicleRegistryTest.class
+part08-Part08_14.DictionaryOfManyTranslations/target/classes/Program.class
