@@ -17,4 +17,24 @@ public class StorageFacility {
     public ArrayList<String> contents(String storageUnit) {
         return this.storageFacility.getOrDefault(storageUnit, new ArrayList<>());
     }
+
+    public void remove(String storageUnit, String item) {
+        if (!this.storageFacility.containsKey(storageUnit)) {
+            return;
+        }
+
+        this.storageFacility.get(storageUnit).remove(item);
+
+        if (this.storageFacility.get(storageUnit).isEmpty()) {
+            this.storageFacility.remove(storageUnit);
+        }
+
+        System.out.println("removing: " + storageUnit + " " + item);
+        System.out.println("storage facility: " + this.storageFacility);
+    }
+
+    public ArrayList<String> storageUnits() {
+        ArrayList<String> storageUnits = new ArrayList<>(this.storageFacility.keySet());
+        return storageUnits;
+    }
 }
