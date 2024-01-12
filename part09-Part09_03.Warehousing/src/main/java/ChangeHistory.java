@@ -52,7 +52,7 @@ public class ChangeHistory {
         double total = 0;
         for (Double temp : productHistory) {
             total = total + temp;
-            System.out.println("total: " + total);
+            //System.out.println("total: " + total);
         }
         return total / productHistory.size();
     }
