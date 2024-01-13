@@ -17,6 +17,12 @@ public class BoxWithMaxWeight extends Box {
 
     @Override
     public void add(Item item) {
-        if(this.we)
+        int totalWeight = item.getWeight();
+        if (totalWeight + item.getWeight() > this.maxCapacity) {
+            return;
+        }
+
+        this.items.add(item);
+    }
 
 }
