@@ -2,11 +2,11 @@ import java.util.ArrayList;
 
 public class BoxWithMaxWeight extends Box {
 
-    private int maxCapacity;
+    private int maxWeight;
     private ArrayList<Item> items;
 
     public BoxWithMaxWeight(int capacity) {
-        this.maxCapacity = capacity;
+        this.maxWeight = capacity;
         items = new ArrayList<>();
     }
 
@@ -17,13 +17,17 @@ public class BoxWithMaxWeight extends Box {
 
     @Override
     public void add(Item item) {
-        int totalWeight = item.getWeight();
-        if (totalWeight + item.getWeight() > this.maxCapacity) {
+        if (totalWeight() + item.getWeight() > this.maxWeight) {
             return;
         }
-
         this.items.add(item);
-        // test
     }
 
+    public int totalWeight() {
+        int totalWeight = 0;
+        for (Item weight : items) {
+            totalWeight += weight.getWeight();
+        }
+        return totalWeight;
+    }
 }
