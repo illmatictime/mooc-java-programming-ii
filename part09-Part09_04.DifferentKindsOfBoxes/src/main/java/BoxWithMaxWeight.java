@@ -23,6 +23,7 @@ public class BoxWithMaxWeight extends Box {
         }
 
         this.items.add(item);
+        // test
     }
 
 }
