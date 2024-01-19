@@ -1,8 +1,6 @@
-import java.util.Map;
 
 public class Item {
     
-    //private Map<String, Integer> item;
     private String product;
     private int qty;
     private int unitPrice;
