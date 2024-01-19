@@ -10,14 +10,11 @@ public class ShoppingCart {
     }
 
     public void add(String product, int price) {
-        for (Item item : this.shoppingCart.values()) {
-
-            if (this.shoppingCart.keySet().contains(product)) {
-                item.increaseQuantity();
-                return;
-            }
+        if(this.shoppingCart.keySet().contains(product)){
+            this.shoppingCart.get(product).increaseQuantity();
+        }else{
+            this.shoppingCart.put(product, new Item(product, 1, price));
         }
-        this.shoppingCart.put(product, new Item(product, 1, price));
     }
 
     public int price() {
