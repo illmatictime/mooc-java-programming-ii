@@ -16,6 +16,8 @@ public class Divisible {
 
         divisible.stream()
                 .forEach(luku -> System.out.println(luku));
+
+        System.out.println("test");
     }
 
     public static ArrayList<Integer> divisible(ArrayList<Integer> numbers) {
