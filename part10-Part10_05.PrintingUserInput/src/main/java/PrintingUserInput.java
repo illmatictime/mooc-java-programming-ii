@@ -6,6 +6,6 @@ public class PrintingUserInput {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
+        // system.out.print("test");
     }
 }
