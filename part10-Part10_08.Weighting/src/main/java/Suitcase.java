@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Suitcase {
 
@@ -20,22 +21,30 @@ public class Suitcase {
     }
 
     public int totalWeight() {
-        int summa = 0;
-        int indeksi = 0;
-        while (indeksi < this.Items.size()) {
-        summa += this.Items.get(indeksi).getweight();
-        indeksi++;
-        }
-        return summa;
+        // int total = 0;
+        // int index = 0;
+        // while (index < this.Items.size()) {
+        // total += this.Items.get(index).getWeight();
+        // index++;
+        // }
+        // return total;
+        return Items.stream()
+                .map(x -> x.getWeight())
+                .collect(Collectors.summingInt(Integer::intValue));
+
+        // return this.Items.stream().mapToInt(t -> t.getWeight()).sum();
+
     }
 
     public void printItems() {
-        int indeksi = 0;
-        while (indeksi < this.Items.size()) {
-        Item t = this.Items.get(indeksi);
-        System.out.println(t);
-        indeksi++;
-        }
+        // int index = 0;
+        // while (index < this.Items.size()) {
+        // Item t = this.Items.get(index);
+        // System.out.println(t);
+        // index++;
+        // }
+        Items.stream()
+                .forEach(x -> System.out.println(x));
     }
 
     public Item heaviestItem() {
@@ -43,7 +52,6 @@ public class Suitcase {
             return null;
         }
 
-        // Tutustumme järjestämiseen hieman myöhemmin kurssilla
         return this.Items.stream().max((t1, t2) -> t1.getWeight() - t2.getWeight()).get();
     }
 
