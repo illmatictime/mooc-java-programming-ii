@@ -16,7 +16,7 @@ public class LiteracyComparison {
                             Double.valueOf(parts[5]))) // parts[3].replace("(%)", "").trim()
                     .sorted((x, y) -> Double.compare(x.getLiteracyPercentage(), y.getLiteracyPercentage()))
                     .forEach(x -> literacy.add(x));
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println("Error:" + e.getMessage());
         }
         literacy.stream()
