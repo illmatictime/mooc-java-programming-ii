@@ -3,40 +3,49 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Employees {
-    
+
     private List<Person> employee;
 
-    public Employees(){
+    public Employees() {
         this.employee = new ArrayList<>();
     }
 
-    public void add(Person personToAdd){
+    public void add(Person personToAdd) {
         this.employee.add(personToAdd);
     }
 
-    public void add(List<Person> peopleToAdd){
-        peopleToAdd.stream().forEach(person -> Employees.this.add(peopleToAdd));
+    public void add(List<Person> peopleToAdd) {
+        peopleToAdd.stream().forEach(person -> Employees.this.add(person));
     }
 
-    public void print(){
+    public void fire(Education education) {
         Iterator<Person> iterator = employee.iterator();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
+            Person nextInLine = iterator.next();
+            if (nextInLine.getEducation() == education) {
+                iterator.remove();
+            }
+        }
+    }
+
+    public void print() {
+        Iterator<Person> iterator = employee.iterator();
+
+        while (iterator.hasNext()) {
             Person nextInLine = iterator.next();
             System.out.println(nextInLine);
         }
-
     }
 
-    public void print(Education education){
+    public void print(Education education) {
         Iterator<Person> iterator = employee.iterator();
 
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             Person nextInLine = iterator.next();
-            if(nextInLine.getEducation() == education){
+            if (nextInLine.getEducation() == education) {
                 System.out.println(nextInLine);
             }
-            
         }
     }
 }
