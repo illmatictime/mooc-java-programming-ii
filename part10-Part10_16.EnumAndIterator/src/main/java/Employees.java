@@ -4,35 +4,39 @@ import java.util.List;
 
 public class Employees {
     
-    private List<Person> persons;
+    private List<Person> employee;
 
     public Employees(){
-        this.persons = new ArrayList<>();
+        this.employee = new ArrayList<>();
     }
 
     public void add(Person personToAdd){
-        this.persons.add(personToAdd);
+        this.employee.add(personToAdd);
     }
 
     public void add(List<Person> peopleToAdd){
-        List<Person> list = new ArrayList<>();
+        peopleToAdd.stream().forEach(person -> Employees.this.add(peopleToAdd));
     }
 
     public void print(){
-        Iterator<Person> iterator = persons.iterator();
+        Iterator<Person> iterator = employee.iterator();
 
         while (iterator.hasNext()){
             Person nextInLine = iterator.next();
             System.out.println(nextInLine);
         }
-        // this.persons.stream().forEach(person -> {
-        //     System.out.println(person);
-        // });
+
     }
 
     public void print(Education education){
-        
-        System.out.println(education);
+        Iterator<Person> iterator = employee.iterator();
 
+        while (iterator.hasNext()){
+            Person nextInLine = iterator.next();
+            if(nextInLine.getEducation() == education){
+                System.out.println(nextInLine);
+            }
+            
+        }
     }
 }
