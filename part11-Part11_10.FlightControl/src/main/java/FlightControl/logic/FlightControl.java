@@ -1,11 +1,11 @@
-package flightControl.logic;
+package FlightControl.logic;
 
 import java.util.Collection;
-import flightControl.domain.Flight;
-import flightControl.domain.Airplane;
+import FlightControl.domain.Flight;
+import FlightControl.domain.Airplane;
 import java.util.HashMap;
 import java.util.Map;
-import flightControl.domain.Place;
+import FlightControl.domain.Place;
 
 public class FlightControl {
 
