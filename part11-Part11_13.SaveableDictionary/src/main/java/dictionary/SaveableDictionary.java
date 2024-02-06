@@ -2,6 +2,7 @@ package dictionary;
 
 import java.util.Map.Entry;
 import java.util.HashMap;
+import java.util.Scanner;
 
 public class SaveableDictionary {
 
@@ -17,8 +18,14 @@ public class SaveableDictionary {
     }
 
     public boolean load(){
-        if(this.filename.isEmpty() || this.filename.equals(null)){
-            return false;
+        try (Scanner fileReader = new Scanner(this.filename)) {
+            while (fileReader.hasNextLine()) {
+                String line = fileReader.nextLine();
+                String[] parts = line.split(":");   // split the line based on the ':' character
+            
+                System.out.println(parts[0]);     // part of line before :
+                System.out.println(parts[1]);     // part of line after :
+            }
         }
         return true;
     }
