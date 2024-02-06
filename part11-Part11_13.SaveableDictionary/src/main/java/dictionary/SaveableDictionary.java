@@ -1,5 +1,6 @@
 package dictionary;
 
+import java.util.Map.Entry;
 import java.util.HashMap;
 
 public class SaveableDictionary {
@@ -23,13 +24,16 @@ public class SaveableDictionary {
         // this.translation
         // return word + " found.";
         // }
-
-        for (String theword : this.translation.values()) {
-            if (theword.equals(word)) {
-                return theword;
+        if (this.translation.containsKey(word)) {
+            return this.translation.get(word);
+        } else {
+            for (Entry<String, String> aword : translation.entrySet()) {
+                if (aword.getValue().equals(word)) {
+                    return aword.getKey();
+                }
             }
         }
 
-        return word + " not found";
+        return this.translation.get(word);
     }
 }
