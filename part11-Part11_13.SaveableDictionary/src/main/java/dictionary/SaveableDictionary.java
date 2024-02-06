@@ -6,34 +6,38 @@ import java.util.HashMap;
 public class SaveableDictionary {
 
     private HashMap<String, String> translation;
+    private String filename;
 
     public SaveableDictionary() {
         this.translation = new HashMap<>();
     }
 
+    public SaveableDictionary(String file){
+        this.filename = file;
+    }
+
+    public boolean load(){
+        if(this.filename.isEmpty() || this.filename.equals(null)){
+            return false;
+        }
+        return true;
+    }
+
     public void add(String words, String translation) {
-        // if (this.translation.containsKey(words)) {
-        // return;
-        // }
-        // this.translation.put(words, translation);
         this.translation.putIfAbsent(words, translation);
     }
 
     public String translate(String word) {
-        // if (this.translation.values().contains(word)) {
-        // this.translation
-        // return word + " found.";
-        // }
-        if (this.translation.containsKey(word)) {
-            return this.translation.get(word);
-        } else {
-            for (Entry<String, String> aword : translation.entrySet()) {
-                if (aword.getValue().equals(word)) {
-                    return aword.getKey();
+        for (Entry<String, String> aword : translation.entrySet()) {
+            if (aword.getValue().equals(word)) {
+                return aword.getKey();
                 }
             }
-        }
-
         return this.translation.get(word);
+    }
+
+    public void delete(String word){
+        this.translation.remove(word);
+        this.translation.remove(this.translate(word));
     }
 }
