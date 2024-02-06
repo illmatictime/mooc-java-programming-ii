@@ -19,6 +19,17 @@ public class SaveableDictionary {
     }
 
     public String translate(String word) {
-        return this.translation.get(word);
+        // if (this.translation.values().contains(word)) {
+        // this.translation
+        // return word + " found.";
+        // }
+
+        for (String theword : this.translation.values()) {
+            if (theword.equals(word)) {
+                return theword;
+            }
+        }
+
+        return word + " not found";
     }
 }
