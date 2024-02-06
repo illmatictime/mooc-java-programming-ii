@@ -2,10 +2,10 @@ package application;
 
 public class StandardSensor implements Sensor {
 
-    private int sensorTime;
+    private int sensor;
 
-    public StandardSensor(int sensorTime) {
-        this.sensorTime = sensorTime;
+    public StandardSensor(int sensor) {
+        this.sensor = sensor;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class StandardSensor implements Sensor {
 
     @Override
     public int read() {
-        return this.sensorTime;
+        return this.sensor;
     }
 
 }
