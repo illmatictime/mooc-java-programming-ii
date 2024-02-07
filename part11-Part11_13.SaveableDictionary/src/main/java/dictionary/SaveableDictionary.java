@@ -21,9 +21,23 @@ public class SaveableDictionary {
         this.filename = file;
     }
 
+    public boolean save(){
+        try {
+            System.out.println("need to setup");
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+    
     public boolean load(){
         try {
-            //read file
+            Files.lines(Paths.get(this.filename))
+                .map(row -> row.split(":"))
+                .forEach(parts -> {
+                    this.translation.put(parts[0], parts[1]);
+                });
+            return true;
         } catch (IOException e) {
             return false;
         }
