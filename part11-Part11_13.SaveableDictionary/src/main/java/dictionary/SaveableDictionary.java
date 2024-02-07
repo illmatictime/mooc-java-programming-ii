@@ -1,6 +1,9 @@
 package dictionary;
 
 import java.util.Map.Entry;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -14,20 +17,16 @@ public class SaveableDictionary {
     }
 
     public SaveableDictionary(String file){
+        this();
         this.filename = file;
     }
 
     public boolean load(){
-        try (Scanner fileReader = new Scanner(this.filename)) {
-            while (fileReader.hasNextLine()) {
-                String line = fileReader.nextLine();
-                String[] parts = line.split(":");   // split the line based on the ':' character
-            
-                System.out.println(parts[0]);     // part of line before :
-                System.out.println(parts[1]);     // part of line after :
-            }
+        try {
+            //read file
+        } catch (IOException e) {
+            return false;
         }
-        return true;
     }
 
     public void add(String words, String translation) {
