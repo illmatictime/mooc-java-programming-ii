@@ -1,11 +1,10 @@
 
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Program {
 
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        // test your class here
 
     }
 
