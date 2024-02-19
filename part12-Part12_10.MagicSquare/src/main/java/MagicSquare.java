@@ -17,7 +17,17 @@ public class MagicSquare {
 
     // implement these three methods
     public ArrayList<Integer> sumsOfRows() {
-        return new ArrayList<>();
+        ArrayList<Integer> sumOfNums = new ArrayList<>();
+        int total = 0;
+        for (int row = 0; row < square.length; row++) {
+            for (int column = 0; column < square[row].length; column++) {
+                total += square[row][column];
+            }
+            sumOfNums.add(total);
+            total = 0;
+        }
+        System.out.println(total);
+        return sumOfNums;
     }
 
     public ArrayList<Integer> sumsOfColumns() {
@@ -78,7 +88,7 @@ public class MagicSquare {
 
     public int readValue(int x, int y) {
         if (x < 0 || y < 0 || x >= getWidth() || y >= getHeight()) {
-            return - 1;
+            return -1;
         }
 
         return this.square[y][x];
