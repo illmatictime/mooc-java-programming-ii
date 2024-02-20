@@ -43,7 +43,16 @@ public class MagicSquare {
     }
 
     public ArrayList<Integer> sumsOfDiagonals() {
-        return new ArrayList<>();
+        ArrayList<Integer> sumOfDiagonals = new ArrayList<>();
+        int total = 0;
+        for (int column = 0; column < square.length; column++) {
+            for (int row = 1; row < square[column].length; row++) {
+                total += square[row][column];
+            }
+            sumOfDiagonals.add(total);
+            total = 0;
+        }
+        return sumOfDiagonals;
     }
 
     // ready-made helper methods -- don't touch these
