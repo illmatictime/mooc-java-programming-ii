@@ -46,27 +46,21 @@ public class MagicSquare {
         ArrayList<Integer> sumOfDiagonals = new ArrayList<>();
         int total = 0;
         int revTotal = 0;
-        for (int column = 0; column < square.length; column++) {
+        for (int i = 0; i < square.length; i++) {
             // System.out.println(square.length);
-            for (int row = 0; row < square[column].length; row++) {
-                total += square[row][column];
-                row++;
-            }
-            column++;
-            sumOfDiagonals.add(0, total);
-            total = 0;
+            total += square[i][i];
         }
-        for (int columnD = square.length; columnD <= 0; columnD--) {
+        sumOfDiagonals.add(total);
 
-            for (int rowD = 0; rowD < square[columnD].length; rowD++) {
-                revTotal += square[rowD][columnD];
-                rowD++;
-            }
-            columnD--;
-            // sumOfDiagonals.add(revTotal);
-            sumOfDiagonals.add(1, revTotal);
-            revTotal = 0;
+        int row = 0;
+        int col = this.square.length - 1;
+
+        while(row < square.length){
+            revTotal += square[row][col];
+            row++;
+            col--;
         }
+        sumOfDiagonals.add(revTotal);
         return sumOfDiagonals;
     }
 
